@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
 
+
 export default function HomePage() {
     return (
         <div className="flex items-center justify-center min-h-screen">
