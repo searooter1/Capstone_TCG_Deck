@@ -1,7 +1,24 @@
+import Link from "next/link";
+import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
+
 export default function HomePage() {
     return (
-        <div className="flex items-center justify-center min-h-screen">
-            <h1 className="-mt-12 text-2xl">Home</h1>
+        <div className="relative min-h-screen overflow-hidden">
+            <div className="relative z-10 flex min-h-screen items-center justify-center pointer-events-none">
+                <div className="-mt-48 text-center pointer-events-auto">
+                    <h1 className="md:text-8xl text-6xl font-semibold">
+                        Deck AI
+                    </h1>
+                    <p className="md:text-xl text-base pb-2">The best place for TCG deck building</p>
+                    <Link
+                        className="inline-flex items-center gap-1 bg-blue-500 rounded-md px-8 pr-6 py-2 mt-1 md:text-lg text-sm font-medium text-gray-300 transition hover:bg-blue-400 hover:text-white"
+                        href="/collection"
+                    >
+                        View a Card Collection
+                        <ArrowUpRightIcon className="w-4 h-4" />
+                    </Link>
+                </div>
+            </div>
         </div>
-    )
+    );
 }
