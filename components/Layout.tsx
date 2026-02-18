@@ -1,11 +1,15 @@
 import type { ReactNode } from "react";
 import type { PropsWithChildren } from "react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 
 export default function Layout({ children }: PropsWithChildren) {
     return (
         <div className="app-container">
-            <header className="app-header">Test Header</header>
+            <Navbar links={['Deck AI', 'Collection', 'About']}/>
             <main className="content">{children}</main>
+            <Footer />
         </div>
     );
 }
