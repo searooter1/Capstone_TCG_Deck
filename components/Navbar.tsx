@@ -7,21 +7,32 @@ export default function Navbar({ links }: { links: string[] }) {
 
     return (
         <nav className="sticky top-0 z-50 bg-gray-800/50 border-b border-white/10">
-            <div className="flex gap-4 px-4 py-3">
-                {links.map((link) => {
-                    const href = link === "Deck AI" ? "/" : `/${link.toLowerCase()}`;
-                    const isActive = pathname === href;
+            <div className="flex items-center justify-between px-4 py-3">
+                <div className="flex gap-4">
+                    {links.map((link) => {
+                        const href = link === "Deck AI" ? "/" : `/${link.toLowerCase()}`;
+                        const isActive = pathname === href;
 
-                    return (
-                        <Link key={href}
-                              className={`rounded-md px-3 py-2 text-sm font-medium text-gray-300 transition hover:bg-white/5 hover:text-white 
-                                        ${isActive ? "bg-gray-950/50 text-white" : ""}`} //ternary if active change colour
-                              href={href}
-                              aria-current={isActive ? "page" : undefined}>
-                            {link}
-                        </Link>
-                    );
-                })}
+                        return (
+
+                            <Link key={href}
+                                  className={`rounded-md px-3 py-2 text-sm font-semibold text-gray-300 transition hover:bg-white/5 hover:text-white 
+                                            ${isActive ? "bg-gray-950/50 text-white" : ""}`} //ternary if active change colour
+                                  href={href}
+                                  aria-current={isActive ? "page" : undefined}>
+                                {link}
+                            </Link>
+                        )
+                    })}
+                </div>
+                <div>
+                    <Link
+                        href="/login"
+                        className="rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 transition hover:bg-gray-200"
+                    >
+                        Login
+                    </Link>
+                </div>
             </div>
         </nav>
     );
