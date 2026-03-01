@@ -8,7 +8,7 @@ export default function TestAuth() {
     return (
         <div className="min-h-screen flex items-center justify-center">
             <div className="-mt-36 w-full max-w-md rounded-2xl border border-white/10 bg-gray-800/40 p-6 shadow-xl backdrop-blur-md">
-                <div className="mb-6 border-b border-white/10 pb-4">
+                <div className="pb-4">
                     <h1 className="text-xl font-semibold text-white">Sign in</h1>
                     <p className="mt-1 text-sm text-gray-300">
                         Access your account to manage your decks and cards.
@@ -29,7 +29,7 @@ export default function TestAuth() {
                             <div className="text-sm text-gray-300">Signed in as</div>
                             <div className="mt-1 text-white">
                                 <div>
-                                    Username: <b>{session.user?.name ?? "—"}</b>
+                                    <b>{session.user?.name ?? "—"}</b>
                                 </div>
                             </div>
                         </div>
