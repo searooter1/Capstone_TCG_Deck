@@ -2,7 +2,6 @@ import { useState } from "react"
 import { signIn, signOut, useSession } from "next-auth/react"
 import Link from "next/link"
 import AuthButton from "@/components/AuthButton"
-import {router} from "next/client";
 
 export default function login() {
     const { data: session, status } = useSession()
@@ -98,20 +97,7 @@ export default function login() {
                     </>
                 ) : (
                     <div className="space-y-3">
-                        <div className="rounded-lg border border-white/10 bg-gray-950/40 p-4">
-                            <div className="text-sm text-gray-300">Signed in as</div>
-                            <div className="mt-1 text-white">
-                                <b>{session.user?.name ?? "No Username"}</b>
-                            </div>
-                        </div>
-
-                        <button
-                            className="w-full rounded-lg px-4 py-2 text-sm font-semibold transitionborder cursor-pointer border-white/10 bg-red-500/20 hover:bg-red-500/30 text-white"
-                            onClick={() => signOut()}
-                            type="button"
-                        >
-                            Sign out
-                        </button>
+                        <p>Logged in</p> {/* unreachable because of middleware but just in case */}
                     </div>
                 )}
             </div>
