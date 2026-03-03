@@ -2,8 +2,9 @@ import { useState } from "react"
 import { signIn, signOut, useSession } from "next-auth/react"
 import Link from "next/link"
 import AuthButton from "@/components/AuthButton"
+import {router} from "next/client";
 
-export default function TestAuth() {
+export default function login() {
     const { data: session, status } = useSession()
     const loading = status === "loading"
 
@@ -20,7 +21,7 @@ export default function TestAuth() {
         const res = await signIn("credentials", {
             email,
             password,
-            redirect: false,
+            callbackUrl: "/", //go to home on login
         })
 
         console.log(res);
@@ -36,7 +37,7 @@ export default function TestAuth() {
         <div className="min-h-screen flex items-center justify-center">
             <div className="-mt-36 w-full max-w-md rounded-2xl border border-white/10 bg-gray-800/40 p-6 shadow-xl backdrop-blur-md">
                 <div className="pb-4">
-                    <h1 className="text-xl font-semibold text-white">Sign in</h1>
+                    <h1 className="text-xl font-semibold text-white">Log in</h1>
                     <p className="mt-1 text-sm text-gray-300">
                         Access your account to manage your decks and cards.
                     </p>

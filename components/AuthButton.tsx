@@ -11,7 +11,7 @@ export default function AuthButton({provider, label, disabled}: {
         border border-white/10 bg-white/5 hover:bg-white/10
         disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer`}
             disabled={disabled}
-            onClick={() => signIn(provider)}
+            onClick={() => signIn(provider, {callbackUrl: "/"})} //redirects to home when signing in
             type="button"
         >
             {label}
